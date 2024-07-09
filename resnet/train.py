@@ -1,3 +1,4 @@
+import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -28,12 +29,14 @@ def run_training(model_fn, train_loader, test_loader, num_classes, num_layers, n
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
+    start_time = time.time()
+
     for epoch in range(num_epochs):
         train_loss = train(model, train_loader, criterion, optimizer, device)
         accuracy, precision, recall, f1 = evaluate(model, test_loader, device)
-        
+        end_time = time.time()
         print(f"{LOG}{CYAN}Epoch {epoch+1}/{num_epochs}{RESET}\n\t\tLoss: {train_loss:.4f}\n\t\tAccuracy: {accuracy:.4f}\n\t\t"
-              f"Precision: {precision:.4f}\n\t\tRecall: {recall:.4f}\n\t\tF1-Score: {f1:.4f}")
-    
+              f"Precision: {precision:.4f}\n\t\tRecall: {recall:.4f}\n\t\tF1-Score: {f1:.4f}\n\t\tElapsed Time:{end_time-start_time}")
+    end_time = time.time()
     final_top1_err, final_top5_err = evaluate_errors(model, test_loader, device)
-    print(f"{SUCCESS}Training complete!\n\t\tFinal Top-1 Error: {final_top1_err:.4f}\n\t\tFinal Top-5 Error: {final_top5_err:.4f}")
+    print(f"{SUCCESS}Training complete!\n\t\tFinal Top-1 Error: {final_top1_err:.4f}\n\t\tFinal Top-5 Error: {final_top5_err:.4f}\n\t\tElapsed Time:{end_time-start_time}")
