@@ -64,5 +64,5 @@ Train ResNet on ImageNet with 101 layers for 50 epochs:
 python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
 ```
 ### Notes:
-Adjust --batch_size according to your system's GPU memory capacity.
-The script will download the datasets automatically (except ImageNet) if they are not found in the specified directory. Download ImageNet dataset from https://www.image-net.org/download.php
+- Adjust `--batch_size` according to your system's GPU memory capacity.
+- The script will download the datasets automatically (except ImageNet) if they are not found in the specified directory. Download ImageNet dataset from [ImageNet Website](https://www.image-net.org/download.php).
