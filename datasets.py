@@ -1,7 +1,9 @@
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
+from utils.log_texts import LOG, ERROR
 
 def get_datasets(dataset_name):
+    print(f"{LOG}Getting the dataset ready!")
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
@@ -28,6 +30,6 @@ def get_datasets(dataset_name):
         test_dataset = datasets.MNIST(root='./datasets', train=False, download=True, transform=transform_mnist)
         num_classes = 10
     else:
-        raise ValueError("Unsupported dataset. Please choose from 'CIFAR10', 'CIFAR100', or 'MNIST'.")
+        raise ValueError(f"{ERROR} Unsupported dataset. Please choose from 'CIFAR10', 'CIFAR100', or 'MNIST'.")
 
     return train_dataset, test_dataset, num_classes
