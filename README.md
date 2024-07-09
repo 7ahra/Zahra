@@ -5,16 +5,16 @@ This project implements various ResNet models (ResNet-18, ResNet-34, ResNet-50, 
 ## File Structure
 ```
 project/
-resnet
-├── block_config.py
-├── __init__.py
-├── models.py
-└── train.py
-utils
-├── datasets.py
-├── evaluations.py
-├── log_texts.py
-├── main.py
+└──resnet
+    ├── block_config.py
+    ├── __init__.py
+    ├── models.py
+    └── train.py
+└──utils
+    ├── datasets.py
+    ├── evaluations.py
+    └── log_texts.py
+└── main.py
 ├── README.md
 └── requirements.txt
 
