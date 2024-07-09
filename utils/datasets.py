@@ -27,7 +27,11 @@ def get_datasets(dataset_name):
         train_dataset = datasets.MNIST(root='./datasets', train=True, download=True, transform=transform_mnist)
         test_dataset = datasets.MNIST(root='./datasets', train=False, download=True, transform=transform_mnist)
         num_classes = 10
+    elif dataset_name == "ImageNet":
+        train_dataset = datasets.ImageNet(root='./datasets', train=True, download=True, transform=transform)
+        train_dataset = datasets.ImageNet(root='./datasets', train=False, download=True, transform=transform)
+        num_classes = 1000
     else:
-        raise ValueError("Unsupported dataset. Please choose from 'CIFAR10', 'CIFAR100', or 'MNIST'.")
+        raise ValueError("Unsupported dataset. Please choose from 'CIFAR10', 'CIFAR100', 'MNIST', or 'ImageNet'.")
 
     return train_dataset, test_dataset, num_classes
