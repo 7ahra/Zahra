@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from utils.log_texts import CYAN, LOG, RESET
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 
 def train(model, train_loader, criterion, optimizer, device):
@@ -48,5 +49,5 @@ def run_training(model_fn, train_loader, test_loader, num_classes, num_epochs=10
         train_loss = train(model, train_loader, criterion, optimizer, device)
         accuracy, precision, recall, f1 = evaluate(model, test_loader, device)
         
-        print(f"Epoch {epoch+1}/{num_epochs}, Loss: {train_loss:.4f}, Accuracy: {accuracy:.4f}, "
+        print(f"{LOG}{CYAN}Epoch {epoch+1}/{num_epochs}{RESET}, Loss: {train_loss:.4f}, Accuracy: {accuracy:.4f}, "
               f"Precision: {precision:.4f}, Recall: {recall:.4f}, F1-Score: {f1:.4f}")
