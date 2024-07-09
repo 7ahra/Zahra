@@ -5,10 +5,19 @@ This project implements various ResNet models (ResNet-18, ResNet-34, ResNet-50, 
 ## File Structure
 ```
 project/
-├── datasets.py
-├── models.py
-├── train.py
+└──resnet
+    ├── block_config.py
+    ├── __init__.py
+    ├── models.py
+    └── train.py
+└──utils
+    ├── datasets.py
+    ├── evaluations.py
+    └── log_texts.py
 └── main.py
+├── README.md
+└── requirements.txt
+
 ```
 
 
@@ -38,11 +47,12 @@ python main.py --dataset <dataset_name> --layers <num_layers> [--epochs <num_epo
 ```
 
 ### Arguments:
---dataset: Specify the dataset to use for training.
-  Choices: `'CIFAR10', 'CIFAR100', 'MNIST', 'ImageNet'`
---layers: Number of layers in the ResNet model.
---epochs: Number of epochs to train the model (default: 10).
---batch_size: Batch size for training and validation (default: 16).
+- **dataset:** Specify the dataset to use for training.
+
+  *choices:* `CIFAR10`, `CIFAR100`, `MNIST`, `ImageNet`
+- **layers:** Number of layers in the ResNet model.
+- **epochs:** Number of epochs to train the model (default: 10).
+- **batch_size:** Batch size for training and validation (default: 16).
 
 ### Example Commands:
 Train ResNet on CIFAR-10 with 50 layers for 20 epochs:
