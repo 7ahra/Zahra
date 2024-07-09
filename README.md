@@ -37,15 +37,15 @@ To train a ResNet model on a specific dataset, use the `main.py` script with the
 
 1. Train ResNet-18 on CIFAR-10 for 10 epochs:
     ```bash
-    python main.py --dataset CIFAR10 --model ResNet18 --epochs 10
+    python main.py --dataset CIFAR10 --layers 18 --epochs 10
     ```
 
 2. Train ResNet-50 on CIFAR-100 for 10 epochs:
     ```bash
-    python main.py --dataset CIFAR100 --model ResNet50 --epochs 10
+    python main.py --dataset CIFAR100 --layers 50 --epochs 10
     ```
 
 3. Train ResNet-152 on MNIST for 10 epochs:
     ```bash
-    python main.py --dataset MNIST --model ResNet152 --epochs 10
+    python main.py --dataset MNIST --layers 152 --epochs 10
     ```
