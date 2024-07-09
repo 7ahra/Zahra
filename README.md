@@ -66,3 +66,55 @@ python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
 ### Notes:
 - Adjust `--batch_size` according to your system's GPU memory capacity.
 - The script will download the datasets automatically (except ImageNet) if they are not found in the specified directory. Download ImageNet dataset from [ImageNet Website](https://www.image-net.org/download.php).
+
+
+## References
+```tex
+@inproceedings{he2016deep,
+  title={Deep Residual Learning for Image Recognition},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2016}
+}
+
+@article{deng2009imagenet,
+  title={ImageNet: A Large-Scale Hierarchical Image Database},
+  author={Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Li, Kai and Fei-Fei, Li},
+  journal={IEEE Computer Vision and Pattern Recognition},
+  year={2009}
+}
+
+@techreport{cifar10,
+  author = {Krizhevsky, Alex and Hinton, Geoffrey},
+  title = {Learning Multiple Layers of Features from Tiny Images},
+  institution = {University of Toronto},
+  year = {2009},
+  type = {Technical Report}
+}
+
+@article{lecun1998mnist,
+  author = {LeCun, Yann and Cortes, Corinna and Burges, CJ.C.},
+  title = {{MNIST} handwritten digit database},
+  journal = {AT\&T Labs},
+  year = {1998},
+  note = {\url{http://yann.lecun.com/exdb/mnist/}}
+}
+
+@article{everingham2010pascal,
+  author = {Everingham, Mark and Van Gool, Luc and Williams, Christopher K. I. and Winn, John and Zisserman, Andrew},
+  title = {The {PASCAL} Visual Object Classes Challenge},
+  journal = {International Journal of Computer Vision},
+  volume = {88},
+  number = {2},
+  pages = {303--338},
+  year = {2010}
+}
+
+@inproceedings{lin2014microsoft,
+  author = {Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Doll{\'a}r, Piotr and Zitnick, C. Lawrence},
+  title = {{Microsoft COCO}: Common Objects in Context},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year = {2014}
+}
+
+```
