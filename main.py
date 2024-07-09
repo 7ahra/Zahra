@@ -1,8 +1,7 @@
 import argparse
 from torch.utils.data import DataLoader
 from utils.datasets import get_datasets
-from resnet import ResNet18, ResNet34, ResNet50, ResNet101, ResNet152
-from resnet.train import run_training
+from resnet import ResNet18, ResNet34, ResNet50, ResNet101, ResNet152, run_training
 
 def main():
     parser = argparse.ArgumentParser(description='Train ResNet on CIFAR-10, CIFAR-100, or MNIST')
