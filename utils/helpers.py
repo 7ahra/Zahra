@@ -33,8 +33,3 @@ def format_duration(seconds):
         duration_str += f"{seconds} Second(s)"
     
     return duration_str.strip()
-
-# Example usage:
-start_time = time.time()
-# Perform some operations or wait for a while...
-end_time = time.time()
