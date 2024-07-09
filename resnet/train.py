@@ -7,6 +7,7 @@ from utils.log_texts import CYAN, LOG, RESET, SUCCESS
 def train(model, train_loader, criterion, optimizer, device):
     model.train()
     running_loss = 0.0
+    torch.cuda.empty_cache()
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
         

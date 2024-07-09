@@ -33,19 +33,26 @@ project/
 
 ## Running the Code
 
-To train a ResNet model on a specific dataset, use the `main.py` script with the appropriate arguments. Here are some examples:
+```bash
+python main.py --dataset <dataset_name> --layers <num_layers> [--epochs <num_epochs>] [--batch_size <batch_size>]
+```
 
-1. Train ResNet-18 on CIFAR-10 for 10 epochs:
-    ```bash
-    python main.py --dataset CIFAR10 --layers 18 --epochs 10
-    ```
+### Arguments:
+--dataset: Specify the dataset to use for training.
+  Choices: `'CIFAR10', 'CIFAR100', 'MNIST', 'ImageNet'`
+--layers: Number of layers in the ResNet model.
+--epochs: Number of epochs to train the model (default: 10).
+--batch_size: Batch size for training and validation (default: 16).
 
-2. Train ResNet-50 on CIFAR-100 for 10 epochs:
-    ```bash
-    python main.py --dataset CIFAR100 --layers 50 --epochs 10
-    ```
-
-3. Train ResNet-152 on MNIST for 10 epochs:
-    ```bash
-    python main.py --dataset MNIST --layers 152 --epochs 10
-    ```
+### Example Commands:
+Train ResNet on CIFAR-10 with 50 layers for 20 epochs:
+```bash
+python main.py --dataset CIFAR10 --layers 50 --epochs 20 --batch_size 32
+```
+Train ResNet on ImageNet with 101 layers for 50 epochs:
+```bash
+python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
+```
+### Notes:
+Adjust --batch_size according to your system's GPU memory capacity.
+The script will download the datasets automatically (except ImageNet) if they are not found in the specified directory. Download ImageNet dataset from https://www.image-net.org/download.php
