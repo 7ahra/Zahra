@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+from utils.evaluations import evaluate, evaluate_errors
+from utils.log_texts import CYAN, LOG, RESET, SUCCESS
 
 def train(model, train_loader, criterion, optimizer, device):
     model.train()
@@ -20,24 +21,6 @@ def train(model, train_loader, criterion, optimizer, device):
     epoch_loss = running_loss / len(train_loader.dataset)
     return epoch_loss
 
-def evaluate(model, test_loader, device):
-    model.eval()
-    all_preds = []
-    all_labels = []
-    with torch.no_grad():
-        for inputs, labels in test_loader:
-            inputs, labels = inputs.to(device), labels.to(device)
-            outputs = model(inputs)
-            _, preds = torch.max(outputs, 1)
-            all_preds.extend(preds.cpu().numpy())
-            all_labels.extend(labels.cpu().numpy())
-    
-    accuracy = accuracy_score(all_labels, all_preds)
-    precision = precision_score(all_labels, all_preds, average='weighted')
-    recall = recall_score(all_labels, all_preds, average='weighted')
-    f1 = f1_score(all_labels, all_preds, average='weighted')
-    return accuracy, precision, recall, f1
-
 def run_training(model_fn, train_loader, test_loader, num_classes, num_epochs=10):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = model_fn(num_classes).to(device)
@@ -48,5 +31,8 @@ def run_training(model_fn, train_loader, test_loader, num_classes, num_epochs=10
         train_loss = train(model, train_loader, criterion, optimizer, device)
         accuracy, precision, recall, f1 = evaluate(model, test_loader, device)
         
-        print(f"Epoch {epoch+1}/{num_epochs}, Loss: {train_loss:.4f}, Accuracy: {accuracy:.4f}, "
-              f"Precision: {precision:.4f}, Recall: {recall:.4f}, F1-Score: {f1:.4f}")
+        print(f"{LOG}{CYAN}Epoch {epoch+1}/{num_epochs}{RESET}\n\t\tLoss: {train_loss:.4f}\n\t\tAccuracy: {accuracy:.4f}\n\t\t"
+              f"Precision: {precision:.4f}\n\t\tRecall: {recall:.4f}\n\t\tF1-Score: {f1:.4f}")
+    
+    final_top1_err, final_top5_err = evaluate_errors(model, test_loader, device)
+    print(f"{SUCCESS}Training complete!\n\t\tFinal Top-1 Error: {final_top1_err:.4f}\n\t\tFinal Top-5 Error: {final_top5_err:.4f}")
