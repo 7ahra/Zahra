@@ -5,10 +5,10 @@ This project implements various ResNet models (ResNet-18, ResNet-34, ResNet-50, 
 ## File Structure
 ```
 project/
-├── datasets.py # Code for loading datasets
-├── models.py # ResNet model definitions
-├── train.py # Training and evaluation functions
-└── main.py # Main script for training the models
+├── datasets.py
+├── models.py
+├── train.py
+└── main.py
 ```
 
 
@@ -23,12 +23,12 @@ project/
 2. Create a virtual environment and activate it:
     ```bash
     python -m venv env
-    source env/bin/activate   # On Windows use `env\Scripts\activate`
+    source env/bin/activate
     ```
 
 3. Install the necessary libraries:
     ```bash
-    pip install torch torchvision scikit-learn
+    pip install -r requirements.txt
     ```
 
 ## Running the Code
