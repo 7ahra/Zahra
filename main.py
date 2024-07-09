@@ -12,8 +12,8 @@ def main():
     args = parser.parse_args()
 
     train_dataset, test_dataset, num_classes = get_datasets(args.dataset)
-    train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
-    test_loader = DataLoader(test_dataset, batch_size=16, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
+    test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False)
 
     run_training(model_fn=get_model, train_loader=train_loader, test_loader=test_loader, num_classes=num_classes, num_layers=args.layers, num_epochs=args.epochs)
 
