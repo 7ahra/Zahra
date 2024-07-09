@@ -47,11 +47,11 @@ python main.py --dataset <dataset_name> --layers <num_layers> [--epochs <num_epo
 ```
 
 ### Arguments:
---dataset: Specify the dataset to use for training.
+- dataset: Specify the dataset to use for training.
   Choices: `'CIFAR10', 'CIFAR100', 'MNIST', 'ImageNet'`
---layers: Number of layers in the ResNet model.
---epochs: Number of epochs to train the model (default: 10).
---batch_size: Batch size for training and validation (default: 16).
+- layers: Number of layers in the ResNet model.
+- epochs: Number of epochs to train the model (default: 10).
+- batch_size: Batch size for training and validation (default: 16).
 
 ### Example Commands:
 Train ResNet on CIFAR-10 with 50 layers for 20 epochs:
