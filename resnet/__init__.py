@@ -1,2 +1,3 @@
-from .models import ResNet18, ResNet34, ResNet50, ResNet101, ResNet152
+from .models import get_model
 from .train import run_training
+from .block_config import get_block_config

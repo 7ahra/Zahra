@@ -1,6 +1,6 @@
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from .block_config import get_block_config
 
 class BasicBlock(nn.Module):
     expansion = 1
@@ -86,17 +86,8 @@ class ResNet(nn.Module):
         out = self.linear(out)
         return out
 
-def ResNet18(num_classes):
-    return ResNet(BasicBlock, [2, 2, 2, 2], num_classes)
-
-def ResNet34(num_classes):
-    return ResNet(BasicBlock, [3, 4, 6, 3], num_classes)
-
-def ResNet50(num_classes):
-    return ResNet(Bottleneck, [3, 4, 6, 3], num_classes)
-
-def ResNet101(num_classes):
-    return ResNet(Bottleneck, [3, 4, 23, 3], num_classes)
-
-def ResNet152(num_classes):
-    return ResNet(Bottleneck, [3, 8, 36, 3], num_classes)
+def get_model(num_classes, num_layers):
+    if num_layers < 50:
+        return ResNet(BasicBlock, get_block_config(num_layers), num_classes)
+    else:
+        return ResNet(Bottleneck, get_block_config(num_layers), num_classes)

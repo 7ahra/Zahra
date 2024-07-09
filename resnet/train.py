@@ -21,9 +21,9 @@ def train(model, train_loader, criterion, optimizer, device):
     epoch_loss = running_loss / len(train_loader.dataset)
     return epoch_loss
 
-def run_training(model_fn, train_loader, test_loader, num_classes, num_epochs=10):
+def run_training(model_fn, train_loader, test_loader, num_classes, num_layers, num_epochs=10):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model = model_fn(num_classes).to(device)
+    model = model_fn(num_classes, num_layers).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
