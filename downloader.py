@@ -1,7 +1,7 @@
 import os
 import json
 import argparse
-from utils.helpers import extract_file, download_file, LOG, WARNING, SUCCESS
+from utils import extract_file, download_file, LOG, WARNING, SUCCESS
 
 def main(dataset):
     with open('utils/urls.json', 'r') as f:

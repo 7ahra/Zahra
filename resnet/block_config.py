@@ -1,4 +1,4 @@
-from utils.helpers import ERROR, LOG
+from utils import ERROR, LOG
 
 def get_block_config(num_layers):
     assert num_layers >= 2, f"{ERROR}Number of layers must be at least 2 for a minimal ResNet configuration"

@@ -1,6 +1,6 @@
 import argparse
 from torch.utils.data import DataLoader
-from utils.datasets import get_datasets
+from utils import get_datasets
 from resnet import get_model, run_training
 
 def main():

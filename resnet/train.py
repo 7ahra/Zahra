@@ -2,8 +2,8 @@ import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from utils.evaluations import evaluate, evaluate_errors
-from utils.helpers import CYAN, LOG, RESET, SUCCESS, format_duration
+from utils import evaluate, evaluate_errors
+from utils import CYAN, LOG, RESET, SUCCESS, format_duration
 
 def train(model, train_loader, criterion, optimizer, device):
     model.train()

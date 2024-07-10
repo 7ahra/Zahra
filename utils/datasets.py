@@ -1,6 +1,3 @@
-import torch
-import torch.utils
-import torch.utils.data
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 from torchvision.datasets import ImageFolder
