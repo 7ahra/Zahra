@@ -40,6 +40,23 @@ project/
     pip install -r requirements.txt
     ```
 
+## Downloading Datasets
+**ImageNet**
+If ImageNet dataset is not downloaded, use the following code to download and extract it.
+```bash
+python downloader.py imageNet
+```
+
+**MS COCO**
+If MS COCO dataset is not downloaded, use the following code to download and extract it.
+```bash
+python downloader.py ms_coco
+```
+
+### Notes
+- CIFAR10 dataset will be downloaded automatically during the training.
+- If download fails due to url issues, the urls can be changed from `utils/urls.json`
+
 ## Running the Code
 
 ```bash
@@ -49,7 +66,7 @@ python main.py --dataset <dataset_name> --layers <num_layers> [--epochs <num_epo
 ### Arguments:
 - **dataset:** Specify the dataset to use for training.
 
-  *choices:* `CIFAR10`, `CIFAR100`, `MNIST`, `ImageNet`
+  *choices:* `CIFAR10`, `MSCOCO`, `ImageNet`
 - **layers:** Number of layers in the ResNet model.
 - **epochs:** Number of epochs to train the model (default: 10).
 - **batch_size:** Batch size for training and validation (default: 16).
