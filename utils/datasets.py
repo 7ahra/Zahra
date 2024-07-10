@@ -19,8 +19,8 @@ def get_datasets(dataset_name):
         test_dataset  = datasets.CocoDetection(root='./datasets/ms_coco/test2017',  annFile='./datasets/ms_coco/annotations/image_info_test2017.json',transform=None)
         num_classes = 80
     elif dataset_name == "ImageNet":
-        train_dataset = ImageFolder('./datasets/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC/train', transform=transform)
-        test_dataset  = ImageFolder('./datasets/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC/test', transform=transform)
+        train_dataset = ImageFolder('./datasets/imageNet/ILSVRC/Data/DET/train', transform=transform)
+        test_dataset  = ImageFolder('./datasets/imageNet/ILSVRC/Data/DET/test', transform=transform)
         num_classes = 1000
     else:
         raise ValueError("Unsupported dataset. Please choose from 'CIFAR10', 'CIFAR100', 'MNIST', or 'ImageNet'.")
