@@ -20,7 +20,7 @@ def get_datasets(dataset_name):
     elif dataset_name == 'MSCOCO':
         train_dataset = datasets.CocoDetection(root='./datasets/ms_coco/train2017', annFile='./datasets/ms_coco/annotations/instances_train2017.json', transform=None)
         test_dataset  = datasets.CocoDetection(root='./datasets/ms_coco/test2017',  annFile='./datasets/ms_coco/annotations/image_info_test2017.json',transform=None)
-        num_classes = 10
+        num_classes = 80
     elif dataset_name == "ImageNet":
         train_dataset = ImageFolder('./datasets/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC/train', transform=transform)
         test_dataset  = ImageFolder('./datasets/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC/test', transform=transform)
