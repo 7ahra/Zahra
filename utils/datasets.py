@@ -11,19 +11,6 @@ transform = transforms.Compose([
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 ])
 
-def collate_fn(batch):
-    # Check if images have different sizes and resize them
-    imgs = [img for img, _ in batch]
-    targets = [target for _, target in batch]
-
-    # Resize images to a consistent size
-    imgs_resized = []
-    for img in imgs:
-        img_resized = transform(img)
-        imgs_resized.append(img_resized)
-
-    return imgs_resized, targets
-
 def get_datasets(dataset_name):
 
     if dataset_name == 'CIFAR10':
