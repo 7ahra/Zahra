@@ -5,7 +5,7 @@ from resnet import get_model, run_training
 
 def main():
     parser = argparse.ArgumentParser(description='Train ResNet on CIFAR-10, CIFAR-100, or MNIST')
-    parser.add_argument('--dataset', type=str, required=True, choices=['CIFAR10', 'CIFAR100', 'MNIST', 'ImageNet'], help='Dataset to use')
+    parser.add_argument('--dataset', type=str, required=True, choices=['CIFAR10', 'MSCOCO', 'ImageNet'], help='Dataset to use')
     parser.add_argument('--layers', type=int, required=True, help='Number of ResNet layers')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs')
     parser.add_argument('--batch_size', type=int, default=16, help="Batch size")

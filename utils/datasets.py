@@ -23,13 +23,9 @@ def get_datasets(dataset_name):
         train_dataset = datasets.CIFAR10(root='./datasets', train=True, download=True, transform=transform)
         test_dataset = datasets.CIFAR10(root='./datasets', train=False, download=True, transform=transform)
         num_classes  = 10
-    elif dataset_name == 'CIFAR100':
-        train_dataset = datasets.CIFAR100(root='./datasets', train=True, download=True, transform=transform)
-        test_dataset  = datasets.CIFAR100(root='./datasets', train=False, download=True, transform=transform)
-        num_classes = 100
-    elif dataset_name == 'MNIST':
-        train_dataset = datasets.MNIST(root='./datasets', train=True, download=True, transform=transform_mnist)
-        test_dataset  = datasets.MNIST(root='./datasets', train=False, download=True, transform=transform_mnist)
+    elif dataset_name == 'MSCOCO':
+        train_dataset = datasets.CocoDetection(root='./datasets', annFile='./datasets', transform=transform_mnist)
+        test_dataset  = datasets.CocoDetection(root='./datasets', annFile='./datasets',transform=transform_mnist)
         num_classes = 10
     elif dataset_name == "ImageNet":
         train_dataset = ImageFolder('./datasets/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC/train', transform=transform)
