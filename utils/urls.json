@@ -1,12 +1,13 @@
 {
     "ms_coco":{
-        "train": "http://images.cocodataset.org/zips/train2017.zip",
-        "train_annotaion": "http://images.cocodataset.org/annotations/annotations_trainval2017.zip",
         "test": "http://images.cocodataset.org/zips/test2017.zip",
-        "test_annotation": "http://images.cocodataset.org/annotations/image_info_test2017.zip"
+        "test_annotation": "http://images.cocodataset.org/annotations/image_info_test2017.zip",
+        "train": "http://images.cocodataset.org/zips/train2017.zip",
+        "train_annotaion": "http://images.cocodataset.org/annotations/annotations_trainval2017.zip"
+        
     },
     "imageNet": {
-        "train": "https://www.image-net.org/data/ILSVRC/2017/ILSVRC2017_DET.tar.gz",
-        "test": "https://www.image-net.org/data/ILSVRC/2017/ILSVRC2017_DET_test_new.tar.gz"
+        "test": "https://www.image-net.org/data/ILSVRC/2017/ILSVRC2017_DET_test_new.tar.gz",
+        "train": "https://www.image-net.org/data/ILSVRC/2017/ILSVRC2017_DET.tar.gz"
     }
 }
