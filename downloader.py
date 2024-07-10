@@ -16,15 +16,18 @@ def main(dataset):
     urls = datasets[dataset]
     dest_folder = './datasets'
     os.makedirs(dest_folder, exist_ok=True)
-    
 
     for dataset_name, urls in datasets_to_download.items():
         for name, url in urls.items():
             print(f'{LOG}Starting download for {dataset_name} - {name}')
-            filepath = download_file(url, dest_folder)
+            dest = os.path.join(dest_folder, dataset_name)
+            os.makedirs(dest, exist_ok=True)
+            filepath = download_file(url, dest_folder=dest)
             print(f'{LOG}Extracting {filepath}')
-            extract_file(filepath, dest_folder)
+            extract_file(filepath, dest)
             print(f'{SUCCESS}Completed extraction for {filepath}')
+    
+    print(f"{SUCCESS}Dataset downloaded and ready to train!")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Download and extract datasets.')

@@ -38,6 +38,13 @@ def format_duration(seconds):
     
     return duration_str.strip()
 
+def remove_zip_tar_files(folder_path):
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        if filename.endswith('.zip') or filename.endswith('.tar.gz'):
+            print(f'Removing {filename}')
+            os.remove(file_path)
+
 def download_file(url, dest_folder):
     response = requests.get(url, stream=True)
     total_size = int(response.headers.get('content-length', 0))
@@ -75,3 +82,4 @@ def extract_file(filepath, dest_folder):
                 for file_info in tar_info_list:
                     tar_ref.extract(file_info, dest_folder)
                     bar.update(1)
+    remove_zip_tar_files(dest_folder)
