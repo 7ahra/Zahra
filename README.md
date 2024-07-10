@@ -1,6 +1,6 @@
 # Exploring Deep Residual Learning for Image Recognition
 
-This project implements various ResNet models (ResNet-18, ResNet-34, ResNet-50, ResNet-101, and ResNet-152) from scratch and trains them on CIFAR-10, CIFAR-100, and MNIST datasets. The performance of the models is evaluated using classification accuracy, precision, recall, and F1-score.
+This project implements ResNet models from scratch and trains them on CIFAR-10, MS COCO, and ImageNet datasets. The performance of the models is evaluated using classification accuracy, precision, recall, and F1-score.
 
 ## File Structure
 ```
