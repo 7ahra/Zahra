@@ -25,8 +25,8 @@ project/
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/mohtasimhadi/exploring_deep_residual_learning_for_image_recognition.git
-    cd exploring_deep_residual_learning_for_image_recognition
+    git clone https://github.com/mohtasimhadi/resnet_exploration.git
+    cd resnet_exploration
     ```
 
 2. Create a virtual environment and activate it:
@@ -42,12 +42,14 @@ project/
 
 ## Downloading Datasets
 **ImageNet**
+
 If ImageNet dataset is not downloaded, use the following code to download and extract it.
 ```bash
 python downloader.py imageNet
 ```
 
 **MS COCO**
+
 If MS COCO dataset is not downloaded, use the following code to download and extract it.
 ```bash
 python downloader.py ms_coco
