@@ -25,8 +25,8 @@ project/
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/mohtasimhadi/exploring_deep_residual_learning_for_image_recognition.git
-    cd exploring_deep_residual_learning_for_image_recognition
+    git clone https://github.com/mohtasimhadi/resnet_exploration.git
+    cd resnet_exploration
     ```
 
 2. Create a virtual environment and activate it:
@@ -40,6 +40,25 @@ project/
     pip install -r requirements.txt
     ```
 
+## Downloading Datasets
+**ImageNet**
+
+If ImageNet dataset is not downloaded, use the following code to download and extract it.
+```bash
+python downloader.py imageNet
+```
+
+**MS COCO**
+
+If MS COCO dataset is not downloaded, use the following code to download and extract it.
+```bash
+python downloader.py ms_coco
+```
+
+### Notes
+- CIFAR10 dataset will be downloaded automatically during the training.
+- If download fails due to url issues, the urls can be changed from `utils/urls.json`
+
 ## Running the Code
 
 ```bash
@@ -49,7 +68,7 @@ python main.py --dataset <dataset_name> --layers <num_layers> [--epochs <num_epo
 ### Arguments:
 - **dataset:** Specify the dataset to use for training.
 
-  *choices:* `CIFAR10`, `CIFAR100`, `MNIST`, `ImageNet`
+  *choices:* `CIFAR10`, `MSCOCO`, `ImageNet`
 - **layers:** Number of layers in the ResNet model.
 - **epochs:** Number of epochs to train the model (default: 10).
 - **batch_size:** Batch size for training and validation (default: 16).
@@ -65,7 +84,6 @@ python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
 ```
 ### Notes:
 - Adjust `--batch_size` according to your system's GPU memory capacity.
-- The script will download the datasets automatically (except ImageNet) if they are not found in the specified directory. Download ImageNet dataset from [ImageNet Website](https://www.image-net.org/download.php).
 
 
 ## References
@@ -90,24 +108,6 @@ python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
   institution = {University of Toronto},
   year = {2009},
   type = {Technical Report}
-}
-
-@article{lecun1998mnist,
-  author = {LeCun, Yann and Cortes, Corinna and Burges, CJ.C.},
-  title = {{MNIST} handwritten digit database},
-  journal = {AT\&T Labs},
-  year = {1998},
-  note = {\url{http://yann.lecun.com/exdb/mnist/}}
-}
-
-@article{everingham2010pascal,
-  author = {Everingham, Mark and Van Gool, Luc and Williams, Christopher K. I. and Winn, John and Zisserman, Andrew},
-  title = {The {PASCAL} Visual Object Classes Challenge},
-  journal = {International Journal of Computer Vision},
-  volume = {88},
-  number = {2},
-  pages = {303--338},
-  year = {2010}
 }
 
 @inproceedings{lin2014microsoft,
