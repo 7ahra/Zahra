@@ -84,7 +84,6 @@ python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
 ```
 ### Notes:
 - Adjust `--batch_size` according to your system's GPU memory capacity.
-- The script will download the datasets automatically (except ImageNet) if they are not found in the specified directory. Download ImageNet dataset from [ImageNet Website](https://www.image-net.org/download.php).
 
 
 ## References
@@ -109,24 +108,6 @@ python main.py --dataset ImageNet --layers 101 --epochs 50 --batch_size 64
   institution = {University of Toronto},
   year = {2009},
   type = {Technical Report}
-}
-
-@article{lecun1998mnist,
-  author = {LeCun, Yann and Cortes, Corinna and Burges, CJ.C.},
-  title = {{MNIST} handwritten digit database},
-  journal = {AT\&T Labs},
-  year = {1998},
-  note = {\url{http://yann.lecun.com/exdb/mnist/}}
-}
-
-@article{everingham2010pascal,
-  author = {Everingham, Mark and Van Gool, Luc and Williams, Christopher K. I. and Winn, John and Zisserman, Andrew},
-  title = {The {PASCAL} Visual Object Classes Challenge},
-  journal = {International Journal of Computer Vision},
-  volume = {88},
-  number = {2},
-  pages = {303--338},
-  year = {2010}
 }
 
 @inproceedings{lin2014microsoft,
