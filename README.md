@@ -19,6 +19,7 @@ project/
 ├── downloader.py
 ├── README.md
 ├── .gitignore
+├── project_report.pdf
 └── requirements.txt
 
 ```
